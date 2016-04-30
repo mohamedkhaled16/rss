@@ -1,0 +1,82 @@
+<style type="text/css">
+
+.newsStoryDate {
+    color: #666;
+    font-size: 11px;
+    font-weight: 700;
+
+}
+
+
+</style>
+
+
+
+
+<div class="container-fluid" style="text-align:right">
+
+<div data-animated="" data-hover-z="1" data-z="0.5" class="panel panel-default paper-shadow">
+                    <div class="panel-heading">
+                        <h4 class="text-headline">Site Name: <?php echo $this->rsstitle; ?></h4>
+                    </div>
+                    <div class="panel-body">
+                  
+                      <?php echo $this->rssdesc; ?>
+                    </div>
+                    
+                       
+                </div>
+	<div class="row">
+
+
+
+<?php
+
+
+
+foreach ($this->rssdata['entries'] as $entry) { 
+
+
+
+
+echo "<div class=\"panel panel-primary \">\n"; 
+echo "  <div class=\"panel-heading \">\n"; 
+echo "    <a href=\"";
+echo $entry['link'];
+echo "\" class=\"panel-title \">";
+echo $entry['title'];
+echo "<li class='glyphicon glyphicon-link'></li></a>\n"; 
+
+echo '<li class="newsStoryDate">';
+echo $entry['dateModified'];
+echo '&nbsp;&nbsp;<p class="glyphicon glyphicon-time"></p></li>';
+echo "  </div>\n"; 
+echo "  <div class=\"panel-body\">\n"; 
+echo $entry['content']; 
+echo "  </div>\n"; 
+echo "</div>\n";
+
+
+
+
+
+
+
+
+
+		/*echo                "<br><br><br>".."<br>";
+		echo				$entry['title']."<br>";
+        echo                $entry['description']."<br>";
+        echo                $entry['dateModified']."<br>";
+        echo                $entry['authors']."<br>";
+        echo                $entry['link']."<br>";
+                echo                $entry['content']."<br>";
+
+        echo                $entry['image']."<br>";*/
+
+                                            }
+
+
+
+?>
+</div></div>

@@ -1,0 +1,273 @@
+   
+<div class="st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l3" >
+<div class="sidebar left sidebar-size-3 sidebar-offset-0 sidebar-visible-desktop sidebar-visible-mobile sidebar-skin-dark" id="sidebar-menu" data-type="collapse">
+            
+        </div>
+        <!-- sidebar effects OUTSIDE of st-pusher: -->
+        <!-- st-effect-1, st-effect-2, st-effect-4, st-effect-5, st-effect-9, st-effect-10, st-effect-11, st-effect-12, st-effect-13 -->
+        <!-- content push wrapper -->
+        <div class="st-pusher" id="content">
+            <!-- sidebar effects INSIDE of st-pusher: -->
+            <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
+            <!-- this is the wrapper for the content -->
+            <div class="st-content">
+                <!-- extra div for emulating position:fixed of the menu -->
+                <div class="st-content-inner padding-none">
+                    <div class="container-fluid">
+                        <div class="page-section third">
+                            <!-- Tabbable Widget -->
+                            <div class="tabbable paper-shadow relative" data-z="0.5">
+                                <!-- Tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#"><i class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Edit Account</span></a></li>
+                                </ul>
+                                <!-- // END Tabs -->
+                                <!-- Panes -->
+                                <div class="tab-content">
+                                    <div id="account" class="tab-pane active">
+                                        <form class="form-horizontal" method="post" >
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label">Avatar</label>
+                                                <div class="col-md-8">
+
+                                                <div class="col-md-6">
+                                                    <div class="media v-middle">
+                                                        <div class="media-left">
+                                                            <div class="icon-block width-100 bg-grey-100">
+                                                                
+                                                                    <img src="<?php echo $this->baseUrl(); ?>/uploads/<?php echo $this->user->photo; ?>">
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                       
+
+                                                 <div class="col-md-6">
+                                                    <div class="media v-middle">
+                                                        <div class="media-left">
+                                                           <?php
+                                                            //echo $this->formFile($this->form->photo);
+								echo $this->form->photo;                                                            
+?>
+
+                                                            <?php 
+$errors = array_filter($this->form->name->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->name->getMessages());
+}?>
+                                                       
+                                                </div>	
+                                            </div>  </div>	
+                                            </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">Full Name</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-control-material">
+                                                               <?php
+                                                               	echo $this->form->name->renderViewHelper();
+                                                               ?>                                        
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                        <div class="col-md-6">
+<?php 
+$errors = array_filter($this->form->name->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->name->getMessages());
+}?>
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">Email</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-control-material">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                      
+                                                            <?php
+                                                            echo $this->form->email->renderViewHelper();
+                                                            ?>
+
+
+                                                             </div>
+                                                        </div>
+                                                            
+                                                        </div>
+                                                        <div class="col-md-6">
+<?php 
+$errors = array_filter($this->form->email->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->email->getMessages());
+}?>
+</div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">User Name</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                   <div class="col-md-6">
+                                                            <div class="form-control-material">
+                                                            <?php
+                                                            echo $this->form->username->renderViewHelper();
+                                                            ?>
+                                                                
+                                                            </div>
+                                                        </div><div class="col-md-6">
+<?php 
+                                                    $errors = array_filter($this->form->username->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->username->getMessages());
+}?>
+</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+<div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">Password</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                   <div class="col-md-6">
+                                                            <div class="form-control-material">
+                                                            <?php
+                                                            echo $this->form->password->renderViewHelper();
+                                                            ?>
+                                                                
+                                                        </div><div class="col-md-6">
+<?php 
+$errors = array_filter($this->form->password->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->password->getMessages());
+}?>
+</div>
+                                            </div></div>
+                                             </div>
+                                                        </div>
+
+
+
+
+
+
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">Signture</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                   <div class="col-md-6">
+                                                            <div class="form-control-material">
+                                                            <?php
+                                                            echo $this->form->signture->renderViewHelper();
+                                                            ?>
+                                                                
+                                                            </div>
+                                                        </div><div class="col-md-6">
+<?php 
+$errors = array_filter($this->form->signture->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->signture->getMessages());
+}?>
+</div>
+                                                         </div>
+                                                        </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">Gender</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                   <div class="col-md-6">
+                                                            <div>
+                                                            <?php
+                                                            echo $this->form->gender->renderViewHelper();
+                                                            ?>
+                                                                
+                                                            </div>
+                                                        </div><div class="col-md-6">
+<?php 
+$errors = array_filter($this->form->gender->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->gender->getMessages());
+}?>
+</div>
+                                                         </div>
+                                                        </div>
+                                            </div>
+
+
+
+
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-md-2 control-label">Country</label>
+                                                <div class="col-md-8">
+                                                    <div class="row">
+                                                   <div class="col-md-6">
+                                                            <div class="form-control-material">
+                                                            <?php
+                                                            echo $this->form->country->renderViewHelper();
+                                                            ?>
+                                                                
+                                                            </div>
+                                                        </div><div class="col-md-6">
+<?php 
+$errors = array_filter($this->form->country->getMessages());
+if (!empty($errors)) {
+    echo $this->formErrors($this->form->country->getMessages());
+}?>
+</div>
+                                                         </div>
+                                                        </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="form-group margin-none">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <button type="submit" class="btn btn-primary paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated>Edit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- // END Panes -->
+                            </div>
+                            <!-- // END Tabbable Widget -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /st-content-inner -->
+            </div>
+            <!-- /st-content -->
+        </div>
+        <!-- /st-pusher -->
+        <!-- Footer -->
+        <footer class="footer">
+            <strong>Rss</strong> v1.0.0 &copy; Copyright 2015
+        </footer>
+        <!-- // Footer -->
+    </div>
+   </div>

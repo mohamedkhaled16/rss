@@ -1,0 +1,79 @@
+<br/><br/>
+<div id="view-content">
+    <p>View script for controller <b>User</b> and script/action name <b>index</b></p>
+</div>
+<h1>Home Page</h1>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<?php
+//$user_session=Zend_Session::namespaceGet('user');
+//var_dump($user_session['user'][0]);
+//echo $user_session['user'][0]['name'];
+                if($this->user->role == 'Admin'){ ?>
+<div class="container">
+    <br><br><br><br><br><br>
+
+    <div class="row">
+        <h3 id="add"><a href="/user/add">Add User</a></h3> |
+        <h3 id="login"><a href="/user/login">Login</a></h3>
+
+        <div class="btn-group btn-group-justified">
+
+            <div class="table-responsive">
+                <table class='table table-hover table-striped table-bordered '>
+                    <thead>
+                    <tr>
+
+                        <th> ID</th>
+                        <th> Name</th>
+                        <th> Email</th>
+                        <th> image</th>
+
+                        <th>Function</th>
+
+                    </tr>
+                    </thead>
+                    <?php
+                    if (!$this->users) {
+                        echo "<tr class='info'><td colspan='4'> <h5>No user in db</h5></td></tr>";
+                    } else {
+                        if ($this->users) {
+                            for ($i = 0; $i < count($this->users); $i++) {
+                                echo "<tr class='info'>";
+                                echo "<td>" . $this->users[$i]['id'] . "</td>";
+                                echo "<td>" . $this->users[$i]['name'] . "</td>";
+                                echo "<td>" . $this->users[$i]['email'] . "</td>";
+                                echo' <td><img src="/uploads/'. $this->users[$i]["photo"] .' " class="img-circle" height="60" width="60"></td>';
+                                echo '<td><a class="btn btn-success"href="/user/edit/id/' . $this->users[$i]['id']. '"> Edit </a> &nbsp;<a class="btn btn-danger" href="/user/delete/id/' . $this->users[$i]['id'] . '"> Delete </a>';
+                                        if($this->users[$i]['status']=='Available'){
+                                            echo '&nbsp;<a class="btn btn-warning" href="/user/ban/id/' . $this->users[$i]['id'] . '"> Ban </a>'
+                                      
+                                        . ' <br /></td>';}else{echo '&nbsp;<a class="btn btn-danger" href="/user/ban/id/' . $this->users[$i]['id'] . '"> Avaliable </a>'
+                                      
+                                        . ' <br /></td>';} 
+                                echo "</tr>";
+
+
+                            }
+                        }
+                    }
+                    ?>
+                </table>
+            </div>
+        </div>
+
+        <div class='col-lg-12 well'>
+            <h1> Main Footer </h1>
+        </div>
+<?php
+
+}else{
+
+    echo "YOUR NOT SuPPOSE TO BE HERE";
+}
+
+
+?>

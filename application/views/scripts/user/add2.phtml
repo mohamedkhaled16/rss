@@ -1,0 +1,47 @@
+<br/><br/>
+<div id="view-content">
+    <p>View script for controller <b>User</b> and script/action name <b>add</b></p>
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+<div class='container text-center'>
+    <div class='col-lg-8 text-left'>
+
+        <?php
+        //echo $this->form;
+
+        $formArray = array(
+            $this->form->name,
+            $this->form->id,
+            $this->form->username,
+            $this->form->email,
+            $this->form->password,
+            $this->form->cpassword,
+            $this->form->signture,
+            $this->form->gender,
+            $this->form->country,
+            $this->form->photo,
+            $this->form->submit);
+        echo '<form role="form" method="post" enctype="multipart/form-data">';
+        foreach ($formArray as $formelment) {
+            echo '<div class="form-group row">';
+//                echo $formelment->renderLabel();
+
+            echo ' <div class="col-lg-8">';
+            echo $formelment;
+            echo ' </div>';
+
+//            $errors = array_filter($formelment->getMessages());
+//            if (!empty($errors)) {
+//                echo $this->formErrors($formelment->getMessages());
+//            }
+            echo ' </div>';
+        }
+        echo '</form>';
+        ?>
+
+
+    </div>
+</div>
